@@ -1,11 +1,10 @@
-# GitResume
-Coding portfolio generator for competitive coders who find it difficult to include their coding profiles in resume 
+# Codefolio
+Coding portfolio generator for competitive coders who find it difficult to include their coding profiles in resume .
 
 ## How to Setup
 1) Install [Node js](https://nodejs.org/en/download/)
 
 2) Run ```npm i``` to install dependencies.
-
 
 ## Sample resume and portfolio
 
