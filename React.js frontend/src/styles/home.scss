@@ -1,0 +1,50 @@
+.userimage {
+    border-radius: 100%;
+    width: 160px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.mainpage {
+    background-color: #ffffff;
+    height: 649px;
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+.bluebg {
+    background-color: rgb(242, 243, 247);
+    margin-left: 100px;
+    border: 1px solid rgb(134, 134, 134);
+    height: 647px;
+    width: 370px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+}
+
+.username{
+    margin-top: 20px;
+    font-size: 25px;
+    position: relative;
+}
+
+.company{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.bio{
+    margin-top: 10px;
+}
+
+.biopara{
+    margin-top: -12px;
+    width: 300px;
+    margin-left: 35px;
+}
+
+.contact{
+    margin-bottom: 6px;
+    margin-top: 7px;
+}
