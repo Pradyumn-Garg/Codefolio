@@ -26,7 +26,8 @@ function WebScrapingComponent() {
         gfgdata, setgfgdata,
         leetdata, setleetdata,
         codechefdata, setcodechefdata,
-        githubdata, setgithubdata
+        githubdata, setgithubdata,
+        leetuser, setleetuser
     } = useContext(GlobalContext);
 
     const handlesubmit = (e) => {
@@ -43,6 +44,7 @@ function WebScrapingComponent() {
             const response = await axios.get('https://leetcode-stats-api.herokuapp.com/' + leetcodeusername);
             // console.log("leetcode here", response.data)
             setleetdata(response.data)
+            setleetuser(leetcodeusername);
             setleetcodeack(true);
         } catch (error) {
             console.log(error)
@@ -89,8 +91,7 @@ function WebScrapingComponent() {
     }
 
     useEffect(() => {
-        // gfgack && githuback && codechefack && leetcodeack
-        if (githuback) {
+        if (gfgack && githuback && codechefack && leetcodeack) {
             navigate('/home');
         }
     }, [gfgack, githuback, codechefack, leetcodeack]);

@@ -6,13 +6,14 @@
 }
 
 .mainpage {
-    background-color: #ffffff;
+    background-color: #000000;
     height: 649px;
-    font-family: "Playfair Display", Georgia, serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
 }
 
-.bluebg {
-    background-color: rgb(242, 243, 247);
+.githubdet {
+    background-color: #1F2937;
     margin-left: 100px;
     border: 1px solid rgb(134, 134, 134);
     height: 647px;
@@ -21,12 +22,15 @@
     align-items: center;
     justify-content: center;
     position: sticky;
+    z-index: 1;
+    color: #DDE6ED;
 }
 
 .username{
     margin-top: 20px;
     font-size: 25px;
     position: relative;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .company{
@@ -47,4 +51,85 @@
 .contact{
     margin-bottom: 6px;
     margin-top: 7px;
+}
+
+.codingdatabox{
+    background-color: #000000;
+    margin-left: 468px;
+    height: 647px;
+    width: 898px;
+    position:absolute;
+    overflow: auto;
+}
+
+.logoutbtn{
+    border-radius: 10px !important;
+    z-index: 1;
+    background-color: #F9BF3F !important; 
+    color: #FFFFFF !important;
+    margin-left: 20px !important;
+    margin-top: 25px !important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.logoutbtn:hover{
+    background-color: #ca9c37 !important;
+}
+
+.dwnbtn{
+    border-radius: 10px !important;
+    z-index: 1;
+    background-color: #F9BF3F !important; 
+    color: #FFFFFF !important;
+    margin-left: 520px !important;
+    margin-top: 25px !important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.dwnbtn:hover{
+    background-color: #ca9c37 !important;
+}
+
+.gfg{
+    background-color: #ffffff;
+    margin-left: 0px;
+    margin-top: -62px;
+    height: 647px;
+    width: 800px;
+    position:absolute;
+}
+
+.colorfield{
+    width: 200px;
+    height: 500px;
+}
+
+.custom-list{
+    margin-left: 20px;
+}
+
+.codechef{
+    background-color: #ffffff;
+    margin-left: 0px;
+    margin-top: 1232px;
+    height: 672px;
+    width: 800px;
+    position:absolute;
+}
+.leetcode{
+    background-color: #DDE6ED;
+    margin-left: 0px;
+    margin-top: 585px;
+    height: 647px;
+    width: 800px;
+    position:absolute;
+}
+
+.leetcharts{
+    margin-left: 450px;
+    margin-top: -190px;
+}
+
+.leetchart2{
+    margin-top: -370px;
 }

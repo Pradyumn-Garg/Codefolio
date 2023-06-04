@@ -7,12 +7,14 @@ export const GlobalContextProvider = ({ children }) => {
     const [leetdata, setleetdata] = useState();
     const [codechefdata, setcodechefdata] = useState();
     const [githubdata, setgithubdata] = useState();
+    const [leetuser, setleetuser] = useState();
 
     const userdata = {
         gfgdata, setgfgdata,
         leetdata, setleetdata,
         codechefdata, setcodechefdata,
-        githubdata, setgithubdata
+        githubdata, setgithubdata,
+        leetuser, setleetuser
     };
     return <GlobalContext.Provider value={userdata}>{children}</GlobalContext.Provider>
 }
