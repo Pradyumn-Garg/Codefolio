@@ -7,11 +7,11 @@ Coding portfolio generator for competitive coders who find it difficult to inclu
 3) Run ```npm start``` for both frontend and backend in seperate terminals.
 
 ## Requirements
-1. Enter correct usernames at login screen.
+Enter correct usernames at login screen.
 
 ## For Best Results
-1. Have a Github picture, as well as contact details (Company, Twitter, LinkedIn, etc.).
-2. Make sure all coding profiles have enough data for each category.
+1) Have a Github picture, as well as contact details (Company, Twitter, LinkedIn, etc.).
+2) Make sure all coding profiles have enough data for each category.
 
 ## Interface
 1) Login
