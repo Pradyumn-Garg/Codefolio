@@ -2,8 +2,8 @@
 Coding portfolio generator for competitive coders who find it difficult to include their coding profiles in their resume.
 
 ## How to Setup
-1) Install [Node js] for both backend and frontend seperately (https://nodejs.org/en/download/)
-2) Run ```npm i``` to install dependencies.
+1) Install [Node js] (https://nodejs.org/en/download/)
+2) Run ```npm i``` to install dependencies for both backend and frontend seperately.
 3) Run ```npm start``` for both frontend and backend in seperate terminals.
 
 ## Requirements
