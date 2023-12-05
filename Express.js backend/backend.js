@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 const gfgscrape = async (gfgurl) => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ headless: 'new' });
     const page = await browser.newPage();
     const urlnew = 'https://auth.geeksforgeeks.org/user/' + gfgurl + '/practice/';
     await page.goto(urlnew);
@@ -109,7 +109,7 @@ const gfgscrape = async (gfgurl) => {
         const rawdata7 = await txt7.jsonValue();
         const [newdata7] = rawdata7.match(regex); // Array of all matches
         gfgdata.schoolct = newdata7;
-
+        
         const [first8] = await page.$x('/html/body/div[6]/div/div[2]/div[4]/div[1]/div/ul/li[2]/a');
         const txt8 = await first8.getProperty('textContent');
         const rawdata8 = await txt8.jsonValue();
@@ -135,13 +135,13 @@ const gfgscrape = async (gfgurl) => {
         gfgdata.hardct = newdata11;
     }
 
-    // console.log("here gfgdata", gfgdata);
-    browser.close();
+    console.log("here gfgdata", gfgdata);
+    await browser.close();
     return gfgdata;
 }
 
 const codechefscrape = async (codechefurl) => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ headless: 'new' });
     const page = await browser.newPage();
     const urlnew = 'https://www.codechef.com/users/' + codechefurl;
     await page.goto(urlnew);
@@ -197,20 +197,20 @@ const codechefscrape = async (codechefurl) => {
     const rawdata7 = await txt7.jsonValue();
     codechefdata.contestc = rawdata7;
 
-    const [first8] = await page.$x('/html/body/main/div/div/div/div/div/section[6]/div/h5[1]');
-    const txt8 = await first8.getProperty('textContent');
-    const rawdata8 = await txt8.jsonValue();
-    const [newdata8] = rawdata8.match(regex); // Array of all matches
-    codechefdata.fprob = newdata8;
-
-    const [first9] = await page.$x('/html/body/main/div/div/div/div/div/section[6]/div/h5[2]');
-    const txt9 = await first9.getProperty('textContent');
-    const rawdata9 = await txt9.jsonValue();
-    const [newdata9] = rawdata9.match(regex); // Array of all matches
-    codechefdata.pprob = newdata9;
-
+    // extracting fully solved problems count from pie chart
+    await page.waitForSelector('svg g.highcharts-label.highcharts-data-label.highcharts-data-label-color-0 text');
+    const extractedText1 = await page.$eval('svg g.highcharts-label.highcharts-data-label.highcharts-data-label-color-0 text', element => element.textContent);
+    const originalValue1 = extractedText1.trim().substring(0, extractedText1.length / 2);
+    codechefdata.fprob = originalValue1;
+    
+    // extracting partially solved problems count from pie chart
+    await page.waitForSelector('svg g.highcharts-label.highcharts-data-label.highcharts-data-label-color-1 text');
+    const extractedText2 = await page.$eval('svg g.highcharts-label.highcharts-data-label.highcharts-data-label-color-1 text', element => element.textContent);
+    const originalValue2 = extractedText2.trim().substring(0, extractedText2.length / 2);
+    codechefdata.pprob = originalValue2;
+    
     console.log("here codechefdata", codechefdata);
-    browser.close();
+    await browser.close();
     return codechefdata;
 }
 

@@ -42,7 +42,7 @@ function WebScrapingComponent() {
     const sendleetcodeurl = async () => {
         try {
             const response = await axios.get('https://leetcode-stats-api.herokuapp.com/' + leetcodeusername);
-            // console.log("leetcode here", response.data)
+            console.log("leetcode here", response.data)
             setleetdata(response.data)
             setleetuser(leetcodeusername);
             setleetcodeack(true);
@@ -56,7 +56,7 @@ function WebScrapingComponent() {
             const response = await axios.post("http://localhost:4000/codechef", {
                 codechefurl
             });
-            // console.log("codechef here", response.data)
+            console.log("codechef here", response.data)
             setcodechefdata(response.data)
             setcodechefack(true);
         }
@@ -68,7 +68,7 @@ function WebScrapingComponent() {
     const sendGithuburl = async () => {
         try {
             const response = await axios.get('https://api.github.com/users/' + githuburl);
-            // console.log("Github here", response.data)
+            console.log("Github here", response.data)
             setgithubdata(response.data)
             setgithuback(true)
         } catch (error) {
@@ -81,7 +81,7 @@ function WebScrapingComponent() {
             const response = await axios.post("http://localhost:4000/gfg", {
                 gfgurl
             });
-            // console.log("gfg here", response.data)
+            console.log("gfg here", response.data)
             setgfgdata(response.data)
             setgfgack(true)
         }
