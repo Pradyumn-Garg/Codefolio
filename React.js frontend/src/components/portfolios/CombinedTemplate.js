@@ -116,23 +116,69 @@ function CombinedTemplate() {
   return (
     <div className="mainpage">
       <Box className="githubdet">
-        <img className="userimage" src={githubdata.avatar_url} />
-        <h1 className="username"> {githubdata.name}</h1>
-        <hr style={{ width: "75%" }}></hr>
-        <h4 className="bio">Bio</h4>
-        <p className="biopara">{githubdata.bio}</p>
-        <hr style={{ width: "75%" }}></hr>
+        {githubdata.avatar_url ? (
+          <img className="userimage" src={githubdata.avatar_url} />
+        ) : (
+          <></>
+        )}
+        {githubdata.name ? (
+          <>
+            <h1 className="username"> {githubdata.name}</h1>
+            <hr style={{ width: "75%" }}></hr>
+          </>
+        ) : (
+          <></>
+        )}
+        {githubdata.bio ? (
+          <>
+            <h4 className="bio">Bio</h4>
+            <p className="biopara">{githubdata.bio}</p>
+            <hr style={{ width: "75%" }}></hr>
+          </>
+        ) : (
+          <></>
+        )}
         <h4 className="contact">Contact</h4>
-        <a> Location: {githubdata.location}</a>
-        <br />
-        <a> Github: {githubdata.html_url}</a>
-        <br />
-        <a> Twitter: {githubdata.twitter_username}</a>
-        <br />
-        <a> Public Repositories: {githubdata.public_repos}</a>
-        <hr style={{ width: "75%" }}></hr>
-        <h4 className="company">Company</h4>
-        <a> {githubdata.company}</a>
+        {githubdata.location ? (
+          <>
+            <a> Location: {githubdata.location}</a>
+            <br />
+          </>
+        ) : (
+          <></>
+        )}
+        {githubdata.html_url ? (
+          <>
+            <a> Github: {githubdata.html_url}</a>
+            <br />
+          </>
+        ) : (
+          <></>
+        )}
+        {githubdata.twitter_username ? (
+          <>
+            <a> Twitter: {githubdata.twitter_username}</a>
+            <br />
+          </>
+        ) : (
+          <></>
+        )}
+        {githubdata.public_repos ? (
+          <>
+            <a> Public Repositories: {githubdata.public_repos}</a>
+            <hr style={{ width: "75%" }}></hr>
+          </>
+        ) : (
+          <></>
+        )}
+        {githubdata.company ? (
+          <>
+            <h4 className="company">Company</h4>
+            <a> {githubdata.company}</a>
+          </>
+        ) : (
+          <></>
+        )}
       </Box>
       <Box className="codingdatabox">
         <Button
